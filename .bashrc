@@ -67,8 +67,7 @@ function is_on_git() {
 
 function parse_git_dirty() {
   [[ $(git status 2> /dev/null | tail -n1) != *"working directory clean"* ]] && echo "±"
-}
-
+} 
 function parse_git_branch() {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
 }
@@ -80,8 +79,5 @@ fi
 
 # User specific aliases and functions
 export PS1="\[$ORANGE\][\[$GREEN\]\u\[$ORANGE\]@\[${BOLD}${MAGENTA}\]\h \[$GREEN\]\w\[$BOLD\]\$(is_on_git && [[ -n \$(git branch 2> /dev/null) ]] && echo \":\")\[$PURPLE\]\$(parse_git_branch)\[$BOLD\]\[$ORANGE\]]\[$RESET\]# "
-
-# Proxy for a Virtualbox VM
-export http_proxy=http://a909858:nssv8iu2@proxyv.dpn.deere.com:82/
 
 alias config='/usr/bin/git --git-dir=/home/jjnich/.conf/ --work-tree=/home/jjnich'
