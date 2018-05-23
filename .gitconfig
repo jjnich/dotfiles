@@ -1,0 +1,33 @@
+[user]
+  name = Jake Nicholson
+  email = nicholsonjacobj@johndeere.com
+
+[color]
+  ui = true
+  branch = true
+  diff = true
+  interactive = true
+  status = true
+  log = true
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+[color "status"]
+  added = yellow bold
+  changed = red bold
+  untracked = cyan bold
+[color "branch"]
+  current = cyan reverse
+  local = blue bold
+  remote = green bold
+[log]
+  date = relative
+[format]
+  pretty = format:%C(bold red)%h%Creset -%C(bold yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset
+[alias]
+  hist = log --graph --abbrev-commit
+  rehead = rebase -i HEAD~2
+[push]
+	default = simple
