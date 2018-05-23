@@ -11,6 +11,7 @@ set matchpairs+=<:> "Allow % to bounce between angles too
 set paste "Paste text without indenting successive lines
 
 "line numbers
+set relativenumber
 set number
 
 "auto indent to previous line when you hit enter
